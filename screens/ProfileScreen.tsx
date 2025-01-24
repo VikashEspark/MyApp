@@ -2,8 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, TextInput, Button, Alert, ScrollView } from 'react-native';
 import supabase from '../supabase'; // Ensure you've initialized supabase client properly
 
+type ItemType = {
+    id: number;
+    name: string;
+    age: string;
+    address: string;
+  };
+
 const ProfileScreen = () => {
-    const [userData, setUserData] = useState<{ id: number; name: string; age: string; address: string }[]>([]);
+    const [userData, setUserData] = useState<ItemType[]>([]);
     const [editingRow, setEditingRow] = useState<number | null>(null);
     const [editedData, setEditedData] = useState({ name: '', age: '', address: '' });
     const [newData, setNewData] = useState({ name: '', age: '', address: '' });
@@ -105,7 +112,7 @@ const ProfileScreen = () => {
 
 
 
-    const renderItem = ({ item, index }: { item: { id: number; name: string; age: string; address: string }, index: number }) => {
+    const renderItem = ({ item, index }: { item: ItemType, index: number }) => {
         return (
             <View key={item.id} style={styles.row}>
                 {editingRow === index ? (
