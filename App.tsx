@@ -9,6 +9,7 @@ import ProfileScreen from './screens/ProfileScreen';
 import QuickActionsScreen from './screens/QuickActionsScreen';
 import NotificationsScreen from './screens/NotificationsScreen';
 import StatisticsScreen from './screens/StatisticsScreen';
+import About from './screens/About';
 
 export type RootStackParamList = {
   Login: undefined;
@@ -19,6 +20,7 @@ export type RootStackParamList = {
   Statistics: undefined;
   Notifications: undefined;
   QuickActions: undefined;
+  Feedback: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -50,6 +52,7 @@ const App: React.FC = () => {
             <Stack.Screen name="QuickActions" component={QuickActionsScreen} />
             <Stack.Screen name="Notifications" component={NotificationsScreen} />
             <Stack.Screen name="Statistics" component={StatisticsScreen} />
+            <Stack.Screen name="Feedback" component={About} />
           </>
         ) : (
           <Stack.Screen

@@ -50,6 +50,18 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
           />
         <Text style={styles.buttonText}>Go to Add Profiles</Text>
               </TouchableOpacity>
+
+      <View style={styles.divider} />
+      <TouchableOpacity
+        style={styles.buttonContainer}
+        onPress={() => navigation.navigate('Feedback')}
+        >
+        <Image
+          source={require('../assets/profile-icon.png')}
+          style={styles.icon}
+          />
+        <Text style={styles.buttonText}>Feedbacks</Text>
+              </TouchableOpacity>
             </View>
 
 
